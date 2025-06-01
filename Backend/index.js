@@ -12,7 +12,7 @@ app.use(
   cors({
     origin: (origin, callback) => {
       const allowedOrigins = [
-        "https://note-frontend-fawn.vercel.app",
+        "https://note-frontend-nu.vercel.app",
         "http://localhost:5173"
       ];
       if (!origin || allowedOrigins.includes(origin)) {
