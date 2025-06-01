@@ -23,7 +23,7 @@ const Pdf = () => {
         console.log(course, type, name);
 
         try {
-            const res = await axios.get("https://note-backend-one.vercel.app/pdf");
+            const res = await axios.get("https://note-backend-tau.vercel.app/pdf");
             console.log(res.data);
 
             const matchedElement = res.data.find((element) => {

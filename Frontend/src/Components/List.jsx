@@ -21,7 +21,7 @@ const List = () => {
             setError(null);
 
             try {
-                const res = await axios.get("https://note-backend-one.vercel.app/list");
+                const res = await axios.get("https://note-backend-tau.vercel.app/list");
                 const matchedElement = res.data.find((element) => {
                     if (element.type === type && element.course === course) {
                         setFetchData(element);
