@@ -1,11 +1,11 @@
-import List from '../Models/List.Model.js'
+import List from '../Models/List.Model.js';
 
 export const getlist = async (req, res) => {
     try {
         const alldata = await List.find();
-        res.json(alldata)
+        res.json(alldata);
     } catch (error) {
-        console.error("Error fetching alldata", error);
-        res.status(500).json({ error: "Internal server error." });
+        console.error("Error fetching alldata:", error.message);
+        res.status(500).json({ error: "Internal server error.", details: error.message });
     }
-}
+};
