@@ -1,8 +1,19 @@
 {
-    "rewrites": [
+    "version": 2,
+    "builds": [
         {
-            "source": "/(.*)",
-            "destination": "/"
+            "src": "api/index.js",
+            "use": "@vercel/node"
         }
-]
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "api/index.js"
+        }
+    ],
+    "env": {
+        "NODE_ENV": "production",
+        "Mongo": "mongodb+srv://ashishkhadka317:ashishkhadka317@cluster0.mxnmjut.mongodb.net/Note?retryWrites=true&w=majority&appName=Cluster0"
+    }
 }
