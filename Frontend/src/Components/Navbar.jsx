@@ -68,15 +68,15 @@ const Navbar = () => {
                                     <li className="px-10 py-4"><NavLink to={{
                                         pathname: '/list/CSIT',
                                         search: '?type=Note'
-                                    }} className={({ isActive }) => ` hover:text-slate-600 ${isActive ? " text-[#00A7E1] hover:text-[#00A7E1]" : ""}`} >BSC.CSIT</NavLink></li>
+                                    }} className={({ isActive }) => ` hover:text-slate-600 ${isActive && location.search  === '?type=Note' ? " text-[#00A7E1] hover:text-[#00A7E1]" : ""}`} >BSC.CSIT</NavLink></li>
                                     <li className="px-10 py-4"><NavLink to={{
                                         pathname: '/list/BCA',
                                         search: '?type=Note'
-                                    }} className={({ isActive }) => ` hover:text-slate-600 ${isActive ? " text-[#00A7E1] hover:text-[#00A7E1]" : ""}`} >BCA</NavLink></li>
+                                    }} className={({ isActive }) => ` hover:text-slate-600 ${isActive && location.search  === '?type=Note' ? " text-[#00A7E1] hover:text-[#00A7E1]" : ""}`} >BCA</NavLink></li>
                                     <li className="px-10 py-4"><NavLink to={{
                                         pathname: '/list/BE',
                                         search: '?type=Note'
-                                    }} className={({ isActive }) => ` hover:text-slate-600 ${isActive ? " text-[#00A7E1] hover:text-[#00A7E1]" : ""}`} >BE</NavLink></li>
+                                    }} className={({ isActive }) => ` hover:text-slate-600 ${isActive && location.search  === '?type=Note' ? " text-[#00A7E1] hover:text-[#00A7E1]" : ""}`} >BE</NavLink></li>
                                 </ul>
                             </li>
                             <li className=" group relative px-3 flex items-center "><NavLink className={({ isActive }) => ` text-center group-hover:text-slate-600 ${isActive ? "  text-[#00A7E1] hover:text-[#00A7E1]" : ""}`} to='/pastpapers'>Past Papers</NavLink><img src="/arrow.png" alt="arrow" className=' group-hover:rotate-180 duration-300 ease-in-out ' />
@@ -84,15 +84,15 @@ const Navbar = () => {
                                     <li className="px-10 py-4"><NavLink to={{
                                         pathname: '/list/CSIT',
                                         search: '?type=Pastpaper'
-                                    }} className={({ isActive }) => ` hover:text-slate-600 ${isActive ? " text-[#00A7E1] hover:text-[#00A7E1]" : ""}`} >BSC.CSIT</NavLink></li>
+                                    }} className={({ isActive }) => ` hover:text-slate-600 ${isActive && location.search  === '?type=Pastpaper' ? " text-[#00A7E1] hover:text-[#00A7E1]" : ""}`} >BSC.CSIT</NavLink></li>
                                     <li className="px-10 py-4"><NavLink to={{
                                         pathname: '/list/BCA',
                                         search: '?type=Pastpaper'
-                                    }} className={({ isActive }) => ` hover:text-slate-600 ${isActive ? " text-[#00A7E1] hover:text-[#00A7E1]" : ""}`} >BCA</NavLink></li>
+                                    }} className={({ isActive }) => ` hover:text-slate-600 ${isActive && location.search  === '?type=Pastpaper' ? " text-[#00A7E1] hover:text-[#00A7E1]" : ""}`} >BCA</NavLink></li>
                                     <li className="px-10 py-4"><NavLink to={{
                                         pathname: '/list/BE',
                                         search: '?type=Pastpaper'
-                                    }} className={({ isActive }) => ` hover:text-slate-600 ${isActive ? " text-[#00A7E1] hover:text-[#00A7E1]" : ""}`} >BE</NavLink></li>
+                                    }} className={({ isActive }) => ` hover:text-slate-600 ${isActive && location.search  === '?type=Pastpaper' ? " text-[#00A7E1] hover:text-[#00A7E1]" : ""}`} >BE</NavLink></li>
                                 </ul>
                             </li>
                             <li className=" group relative px-3 flex items-center "><NavLink className={({ isActive }) => ` text-center group-hover:text-slate-600 ${isActive ? "  text-[#00A7E1] hover:text-[#00A7E1]" : ""}`} to='/syllabus'>Syllabus</NavLink><img src="/arrow.png" alt="arrow" className=' group-hover:rotate-180 duration-300 ease-in-out ' />
@@ -100,15 +100,15 @@ const Navbar = () => {
                                     <li className="px-10 py-4"><NavLink to={{
                                         pathname: '/list/CSIT',
                                         search: '?type=Syllabus'
-                                    }} className={({ isActive }) => ` hover:text-slate-600 ${isActive ? " text-[#00A7E1] hover:text-[#00A7E1]" : ""}`} >BSC.CSIT</NavLink></li>
+                                    }} className={({ isActive }) => ` hover:text-slate-600 ${isActive && location.search  === '?type=Syllabus' ? " text-[#00A7E1] hover:text-[#00A7E1]" : ""}`} >BSC.CSIT</NavLink></li>
                                     <li className="px-10 py-4"><NavLink to={{
-                                        pathname: '/list/BCA',
+                                        pathname: '/list/B',
                                         search: '?type=Syllabus'
-                                    }} className={({ isActive }) => ` hover:text-slate-600 ${isActive ? " text-[#00A7E1] hover:text-[#00A7E1]" : ""}`} >BCA</NavLink></li>
+                                    }} className={({ isActive }) => ` hover:text-slate-600 ${isActive && location.search  === '?type=Syllabus' ? " text-[#00A7E1] hover:text-[#00A7E1]" : ""}`} >BCA</NavLink></li>
                                     <li className="px-10 py-4"><NavLink to={{
                                         pathname: '/list/BE',
                                         search: '?type=Syllabus'
-                                    }} className={({ isActive }) => ` hover:text-slate-600 ${isActive ? " text-[#00A7E1] hover:text-[#00A7E1]" : ""}`} >BE</NavLink></li>
+                                    }} className={({ isActive }) => ` hover:text-slate-600 ${isActive && location.search  === '?type=Syllabus' ? " text-[#00A7E1] hover:text-[#00A7E1]" : ""}`} >BE</NavLink></li>
                                 </ul>
                             </li>
                             <li className="px-3 mr-8 flex items-center "><NavLink className={({ isActive }) => ` hover:text-slate-600 ${isActive ? " text-[#00A7E1] hover:text-[#00A7E1]" : ""}`} to='/aboutus'>About us</NavLink></li>
