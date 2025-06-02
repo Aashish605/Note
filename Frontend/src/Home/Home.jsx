@@ -36,15 +36,24 @@ const Home = () => {
                 </div>
                 <h1 className="text-3xl md:text-4xl my-10 text-center">Find Your Note</h1>
                 <div className="w-[70vw] flex flex-wrap  gap-8 my-20  mx-auto justify-center ">
-                    <NavLink className="" to='/Note/CSIT' ><div className="bg-[#EBEBEB] cursor-pointer group  w-[200px] h-[25vh] shadow-md  rounded-md grow flex items-center justify-center text-2xl relative">
+                    <NavLink className="" to={{
+                        pathname: '/list/CSIT',
+                        search: '?type=Note'
+                    }} ><div className="bg-[#EBEBEB] cursor-pointer group  w-[200px] h-[25vh] shadow-md  rounded-md grow flex items-center justify-center text-2xl relative">
                         <span className='group-hover:z-10'>BSC.CSIT</span>
                         <div className="absolute group-hover:z-0  w-[104%] h-[103%] -z-10   rounded-lg bg-gradient-to-r from-blue-200 to-cyan-300"></div>
                     </div></NavLink>
-                    <NavLink to="/Note/BCA"><div className="bg-[#EBEBEB] cursor-pointer group w-[200px] h-[25vh] shadow-md  rounded-lg grow flex items-center justify-center text-2xl relative">
+                    <NavLink to={{
+                        pathname: '/list/BCA',
+                        search: '?type=Note'
+                    }}><div className="bg-[#EBEBEB] cursor-pointer group w-[200px] h-[25vh] shadow-md  rounded-lg grow flex items-center justify-center text-2xl relative">
                         <span className='group-hover:z-10'>BCA</span>
                         <div className="absolute group-hover:z-0  w-[104%] h-[103%] -z-10  rounded-lg bg-gradient-to-r from-blue-200 to-cyan-300"></div>
                     </div></NavLink>
-                    <NavLink to="/Note/BE"><div className="bg-[#EBEBEB] cursor-pointer group w-[200px] h-[25vh] shadow-md  rounded-lg grow flex items-center justify-center text-2xl relative">
+                    <NavLink to={{
+                        pathname: '/list/BE',
+                        search: '?type=Note'
+                    }}><div className="bg-[#EBEBEB] cursor-pointer group w-[200px] h-[25vh] shadow-md  rounded-lg grow flex items-center justify-center text-2xl relative">
                         <span className='group-hover:z-10'>BE</span>
                         <div className="absolute  group-hover:z-0 w-[104%] h-[103%] -z-10  rounded-lg bg-gradient-to-r from-blue-200 to-cyan-300"></div>
                     </div></NavLink>
