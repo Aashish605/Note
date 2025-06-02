@@ -3,6 +3,6 @@ const router = express.Router();
 
 import { getlist } from "../Controllers/List.Controller.js";
 
-router.get("/list",getlist)
+router.get("/",getlist)
 
 export default router;

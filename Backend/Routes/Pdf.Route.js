@@ -3,7 +3,7 @@ const router = express.Router();
 
 import { getPdf } from "../Controllers/Pdf.Controller.js";
 
-router.get("/pdf",getPdf)
+router.get("/",getPdf)
 
 
 export default router;

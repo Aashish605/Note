@@ -32,8 +32,8 @@ app.use(express.json());
 
 
 
-app.use("/", list);
-app.use("/", Pdf);
+app.use("/list", list);
+app.use("/pdf", Pdf);
 
 
 async function startServer() {
