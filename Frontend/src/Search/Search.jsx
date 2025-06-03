@@ -1,52 +1,65 @@
 import { useState, useEffect } from 'react';
-import { NavLink, useParams } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import Fuse from "fuse.js";
 import axios from "axios";
 
-const Search = () => {
-    const { data } = useParams();
-    const [Data, setData] = useState([]);
+const Search = (props) => {
+    const [close, setClose] = useState(false);
+    // const [Item, setItem] = useState([]);
+    const [database, setDatabase] = useState([]);
     const [result, setResult] = useState([]);
+
+    const data = props.query;
 
     useEffect(() => {
         const getData = async () => {
             try {
-                const response = await axios.get("https://note-backend-one.vercel.app/search");
-                setData(response.data);
-                if (data) {
-                    performSearch(data, response.data);
+                const response = await axios.get("https://note-backend-one.vercel.app/pdf");
+                if (response.data && Array.isArray(response.data)) {
+                    setDatabase(response.data);
+                } else {
+                    console.error("Invalid response structure:", response.data);
                 }
             } catch (error) {
-                console.error(error);
+                console.error("Error fetching data:", error);
             }
         };
         getData();
     }, [data]);
 
-    const handleSearch = (e) => {
-        const pattern = e.target.value;
-        performSearch(pattern, Data);
+    useEffect(() => {
+        setClose(false);
+    }, [data]);
+
+    useEffect(() => {
+        const closeSearch = (e) => {
+            if (data && !e.target.closest('.search')) {
+                setClose(true);
+            }
+        };
+        window.addEventListener("click", closeSearch);
+        return () => {
+            window.removeEventListener("click", closeSearch);
+        };
+    });
+
+    useEffect(() => {
+        if (database && database.length > 0) {
+            performSearch(data, database);
+        }
+    }, [database, data]);
+
+    const fuseOptions = {
+        isCaseSensitive: false,
+        keys: ["name", "type", "course"]
     };
 
     const performSearch = (pattern, dataToSearch) => {
         if (pattern) {
-            const fuse = new Fuse(dataToSearch, {
-                keys: ["data.subjects.name"],
-                includeScore: true
-            });
+            const fuse = new Fuse(dataToSearch, fuseOptions);
             const fuseResults = fuse.search(pattern);
-            const filteredResults = fuseResults.map(fuseResult => {
-                const item = fuseResult.item;
-                const matchedSubjects = item.data.map(sem => {
-                    const matchedSem = { ...sem };
-                    matchedSem.subjects = sem.subjects.filter(sub =>
-                        sub.name.toLowerCase().includes(pattern.toLowerCase()));
-                    return matchedSem;
-                }).filter(sem => sem.subjects.length > 0);
-                return { ...item, data: matchedSubjects };
-            }).filter(item => item.data.length > 0);
-            setResult(filteredResults);
-            console.log(filteredResults)
+            setResult(fuseResults);
+            console.log(fuseResults);
         } else {
             setResult([]);
         }
@@ -54,51 +67,31 @@ const Search = () => {
 
     return (
         <>
-            <div className='h-full w-[95vw] my flex'>
-                <div className='py-10 mx-auto'>
-                    <div className="flex border-2 bg-white rounded-md md:w-[30vw] w-[65vw]  mx-auto py-2 ">
-                        <input
-                            type="text"
-                            onChange={handleSearch}
-                            className="md:w-[25vw] w-[50vw] mx-2 outline-none "
-                            placeholder="Search by Name"
-                        />
-                        <NavLink>
-                            <box-icon name='search-alt-2'></box-icon>
-                        </NavLink>
-                    </div>
-                    <div className='w-[90vw] mx-auto'>
-                        <div className='flex flex-wrap mx-5'>
-                            {
-                                result.length > 0 ? result.map(item => (
-                                    <span key={item.id} className='px-5 text-2xl flex flex-wrap md:gap-10'>
-                                        {item.data.map(element => (
-                                            <span key={element.sem} className='flex flex-wrap md:gap-10' >
-                                                {element.subjects.map(subject => (
-                                                    <span key={subject.name} className='' >
-                                                        <NavLink to={`/${item.type}/${item.title}/${subject.name}`}>
-                                                            <span className="bg-[#EBEBEB]  text-black cursor-pointer group w-[210px] h-[25vh] shadow-md my-9 rounded-md flex items-center justify-center text-2xl relative">
-                                                                <span className='text-center px-4 group-hover:z-10'>{subject.name} {item.title} </span>
-                                                                <span className="absolute group-hover:z-0 w-[102%] h-[103%] -z-10 rounded-lg bg-gradient-to-r from-blue-200 to-cyan-300"></span>
-                                                            </span>
-                                                        </NavLink>
-                                                    </span>
-                                                ))}
-                                            </span>
-                                        ))}
-                                    </span>
-                                )) :
-                                    <div className='w-full mx-auto flex justify-center'>
-                                        <img src="/nodata.jpg" alt="No Data found" />
-                                    </div>
-                            }
-                        </div>
-                    </div>
+            <div className={`search w-full min-[815px]:w-[50vw] ${data ? "h-fit pb-10 absolute top-[10vh] shadow-md right-0 z-50 bg-[#EBEBEB] w-[50vw]" : "hidden"} ${close ? "hidden" : ""}`}>
+                {result.length > 0 ? (
+                    <div className='px-4 py-2 text-xl'>
 
-                </div>
+                        {result.map((item, index) => (
+                            <NavLink
+                                to={`/${item.item.name}?type=${item.item.type}&course=${item.item.course}`}
+                                className='list-disc mx-2 flex items-center justify-between px-8 gap-6 my-8'
+                                key={index}
+                                onClick={() => setClose(true)} // <-- Add this line
+                            >
+                                <p>Subject : {item.item.name}</p>
+                                <p>Type : {item.item.type}</p>
+                                <p>Course : {item.item.course}</p>
+                            </NavLink>
+
+                        ))}
+
+                    </div>
+                ) : (
+                    <p>No results found.</p>
+                )}
             </div>
         </>
     );
-}
+};
 
 export default Search;

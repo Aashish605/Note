@@ -17,9 +17,13 @@ const Footer = () => {
                     <div className="w-full text-center  sm:w-[30%]">
                         <p className="text-xl font-semibold ">Quick Links</p>
                         <div className="text-black-300  ">
-                            <li className=" hover:underline decoration-0 hover:underline-offset-4 cursor-pointer list-none mt-5">Menu</li>
-                            <li className=" hover:underline decoration-0 hover:underline-offset-4 cursor-pointer list-none mt-2">About Us</li>
-                            <li className=" hover:underline decoration-0 hover:underline-offset-4 cursor-pointer list-none mt-2">Log In</li>
+                            <ul className="">
+                                <li  className="mx-4 mb-2 "><NavLink className={({ isActive }) => ` hover:text-slate-600 ${isActive ? " text-[#00A7E1] hover:text-[#00A7E1]" : ""}`} to='/'>Home</NavLink></li>
+                                <li  className="mx-4 mb-2 "><NavLink className={({ isActive }) => ` hover:text-slate-600 ${isActive ? " text-[#00A7E1] hover:text-[#00A7E1]" : ""}`} to='/Note'>Note</NavLink></li>
+                                <li  className="mx-4 mb-2 "><NavLink className={({ isActive }) => ` hover:text-slate-600 ${isActive ? " text-[#00A7E1] hover:text-[#00A7E1]" : ""}`} to='/pastpapers'>Past Papers</NavLink></li>
+                                <li  className="mx-4 mb-2 "><NavLink className={({ isActive }) => ` hover:text-slate-600 ${isActive ? " text-[#00A7E1] hover:text-[#00A7E1]" : ""}`} to='/syllabus'>Syllabus</NavLink></li>
+                                <li  className="mx-4 mb-2 "><NavLink className={({ isActive }) => ` hover:text-slate-600 ${isActive ? " text-[#00A7E1] hover:text-[#00A7E1]" : ""}`} to='/aboutus'>About Us</NavLink></li>
+                            </ul>
                         </div>
                     </div>
 

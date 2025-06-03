@@ -68,7 +68,7 @@ const List = () => {
                         <h1 className="text-center text-4xl mt-16">{course} {type} </h1>
                         <div className="w-[90vw] mx-auto">
                             {fetchData.list.map((semester) => (
-                                <div key={semester.sem} className="m-8 w-full">
+                                <div key={semester.sem} className="my-8 ">
                                     <div className="w-[80vw] border-2 my-4 border-slate-800"></div>
                                     <h2 className="text-3xl mt-4">{semester.sem} {type} </h2>
                                     <div className="w-[80vw] flex flex-wrap gap-8 my-4">
