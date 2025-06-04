@@ -1,11 +1,9 @@
 import express from "express";
+import { getPdf, postPdf } from "../Controllers/Pdf.Controller.js";
+
 const router = express.Router();
 
-import { getPdf } from "../Controllers/Pdf.Controller.js";
-import {postPdf} from "../Controllers/Pdf.Controller.js"
-
-router.get("/",getPdf)
-router.post('/',postPdf)
-
+router.get("/", getPdf);
+router.post("/", postPdf);
 
 export default router;
