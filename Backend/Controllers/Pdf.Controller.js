@@ -16,6 +16,11 @@ export const postPdf = async (req, res) => {
     try {
         const { name, type, course, description, pdf } = req.body;
 
+        // Validate required fields
+        if (!name || !type || !course || !description) {
+            return res.status(400).json({ error: "All fields (name, type, course, description) are required." });
+        }
+
         // Create a new Pdf document
         const newPdf = new Pdf({
             name,
@@ -31,7 +36,7 @@ export const postPdf = async (req, res) => {
         // Respond with the saved document
         res.status(201).json(savedPdf);
     } catch (error) {
-        console.error("Error saving PDF data", error);
+        console.error("Error saving PDF data:", error);
         res.status(500).json({ error: "Internal server error." });
     }
 };

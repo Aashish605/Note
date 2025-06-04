@@ -17,10 +17,19 @@ const pdfSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    pdf: {
-        type: Array,
-        required: true,
-    },
+    pdf: [
+        {
+            chapter: {
+                type: String,
+                required: false, // Optional if some PDFs don't have chapters
+            },
+            link: {
+                type: String,
+                required: false, // Optional if some PDFs don't have links
+            },
+        },
+    ],
 });
-const Pdf = mongoose.model("pdf", pdfSchema);
+
+const Pdf = mongoose.model("Pdf", pdfSchema);
 export default Pdf;

@@ -30,10 +30,14 @@ const Post = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const post = await axios.post("https://note-backend-one.vercel.app/pdf",{formData})
-        console.log(post);
-        console.log(JSON.stringify(formData, null, 2));
-        alert("Check Console for JSON Output!");
+        try {
+            const post = await axios.post("https://note-backend-one.vercel.app/pdf", formData); // Remove {formData}
+            console.log(post);
+            alert("Data submitted successfully!");
+        } catch (error) {
+            console.error("Error submitting data:", error);
+            alert("Failed to submit data. Check the console for details.");
+        }
     };
 
     return (
