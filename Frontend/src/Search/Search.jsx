@@ -67,14 +67,13 @@ const Search = (props) => {
 
     return (
         <>
-            <div className={`search w-full min-[815px]:w-[50vw] ${data ? "h-fit pb-10 absolute top-[100%] shadow-md right-0 z-50 bg-[#9a2b2b] w-[50vw]" : "hidden"} ${close ? "hidden" : ""}`}>
+            <div className={`search w-[100vw] shadow-2xl overflow-y-auto min-[815px]:w-[50vw]  ${data ? " max-h-[70vh] pb-10 absolute top-[100%] shadow-md right-0 z-50 bg-[#EBEBEB] w-[50vw]" : "hidden"} ${close ? "hidden" : ""}`}>
                 {result.length > 0 ? (
-                    <div className='px-4 py-2 text-xl'>
-
+                    <div className=' py-2 text-xl'>
                         {result.map((item, index) => (
                             <NavLink
                                 to={`/${item.item.name}?type=${item.item.type}&course=${item.item.course}`}
-                                className='list-disc mx-2 flex items-center px-8 gap-6 my-8'
+                                className='list-disc  border-2 w-fit mx-auto px-2 py-4 bg-gradient-to-r from-blue-200 to-cyan-300 flex min-[555px]:flex-row flex-col items-center   gap-6 my-8'
                                 key={index}
                                 onClick={() => setClose(true)} // <-- Add this line
                             >
@@ -82,9 +81,7 @@ const Search = (props) => {
                                 <p>Type : {item.item.type}</p>
                                 <p>Course : {item.item.course}</p>
                             </NavLink>
-
                         ))}
-
                     </div>
                 ) : (
                     <p>No results found.</p>
