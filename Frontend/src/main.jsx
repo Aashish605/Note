@@ -15,8 +15,7 @@ import AboutUs from "./AboutUs/About.jsx";
 import Syllabus from "./Syllabus/Syllabus.jsx";
 import List from './Components/List.jsx' 
 import Pdf from "./Components/Pdf.jsx";
-// import Serach from './Components/Serach.jsx';
-// import Error from './Components/Error.jsx';
+import Post from './Components/Post.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -28,8 +27,7 @@ const router = createBrowserRouter(
       <Route path="syllabus" element={<Syllabus />} />
       <Route path="list/:course" element={<List />} />
       <Route path=":subj" element={<Pdf />} />
-      {/* <Route path='search/:data' element={<Serach />} /> */}
-      <Route path='maintenance' element={<Error />} />
+      <Route path='post' element={<Post/>}/>
     </Route>
   )
 );
