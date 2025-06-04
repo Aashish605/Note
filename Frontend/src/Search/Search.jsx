@@ -78,7 +78,7 @@ const Search = (props) => {
                                 onClick={() => setClose(true)} // <-- Add this line
                             >
                                 <p>Subject : {item.item.name}</p>
-                                <p>Type : {item.item.type}</p>
+                                <p> Type : {item.item.type}</p>
                                 <p>Course : {item.item.course}</p>
                             </NavLink>
                         ))}
