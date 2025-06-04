@@ -78,7 +78,7 @@ const List = () => {
                                                 key={subject}
                                                 className="no-underline text-inherit"
                                             >
-                                                <div className="bg-primary cursor-pointer group w-[270px] px-4 h-[15vh] shadow-md rounded-md flex items-center justify-center text-2xl relative">
+                                                <div className="bg-primary text-center cursor-pointer group w-[270px] px-4 h-[15vh] shadow-md rounded-md flex items-center justify-center text-2xl relative">
                                                     <span className="group-hover:z-10">{subject}</span>
                                                     <div className="absolute group-hover:z-0 w-[102%] h-[103%] -z-10 rounded-lg bg-gradient-to-r from-blue-200 to-cyan-300"></div>
                                                 </div>
