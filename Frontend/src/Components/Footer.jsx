@@ -8,8 +8,8 @@ const Footer = () => {
                 <div className="flex flex-wrap justify-between w-full text-[1.05rem] p-10 gap-8">
                     <div className="w-full  sm:w-[30%]">
                         <p className="text-xl font-semibold max-[550px]:pt-8">About Us</p>
-                        <p className="mt-3 text-wrap text-black-300">
-                            Welcome to FoodKing, your ultimate destination for delicious and freshly prepared meals. We are passionate about serving you the best food, crafted with love and the finest ingredients.
+                        <p className="mt-3 text-wrap text-justify text-black-300">
+                            Noteflix is a dynamic, student-focused educational Website , dedicated to help learners and students to get the notes and other study resources esaily. Founded by the students we exist to make the learning journey of every student easier.
                         </p>
                     </div>
 
@@ -48,7 +48,7 @@ const Footer = () => {
 
                 <div className="mx-10 py-10 flex flex-wrap items-center gap-4">
                     <li className="text-black-300 list-none">
-                        &copy;2025, <NavLink className="hover:underline hover:underline-offset-4">FoodKing</NavLink>
+                        &copy;2025, <NavLink className="hover:underline hover:underline-offset-4">Noteflix</NavLink>
                     </li>
                     <li>
                         <NavLink className="w-fit text-black-300 hover:underline hover:underline-offset-4">ALl Right Reserved</NavLink>
