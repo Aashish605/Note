@@ -13,7 +13,7 @@ app.use(
   cors({
     origin: (origin, callback) => {
       const allowedOrigins = [
-        "https://noteflix.in/",
+        "https://noteflix.in",
         "https://note-frontend-nu.vercel.app",
         "http://localhost:5173"
       ];
