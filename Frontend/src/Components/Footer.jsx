@@ -54,7 +54,7 @@ const Footer = () => {
                         <NavLink className="w-fit text-black-300 hover:underline hover:underline-offset-4">ALl Right Reserved</NavLink>
                     </li>
                     <li>
-                        <NavLink className="w-fit text-black hover:underline hover:underline-offset-4">Website Developed By __________</NavLink>
+                        <NavLink className="w-fit text-black hover:underline hover:underline-offset-4">Website Developed By Cloud Nepal</NavLink>
                     </li>
 
                 </div>

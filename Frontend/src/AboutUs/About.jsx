@@ -9,9 +9,9 @@ const About = () => {
                     </div>
 
                     <div className="max-w-lg flex flex-col gap-5">
-                        <h2 className="text-blue-600 text-3xl">What is Notefelix and what it does?</h2>
+                        <h2 className="text-blue-600 text-3xl">What is Noteflix and what it does?</h2>
                         <div className="my-4">
-                            Notefelix is a Web-based e-learning platform where you can find all study-related materials, including productive Note, class assignments, university update channels, study blogs, articles, question banks, solutions, important questions, and the career section. We built this platform to provide the best possible resource for students so that they can excel in their academic journey.
+                            Noteflix is a Web-based e-learning platform where you can find all study-related materials, including productive Note, class assignments, university update channels, study blogs, articles, question banks, solutions, important questions, and the career section. We built this platform to provide the best possible resource for students so that they can excel in their academic journey.
                         </div>
                         <div>
                             <h3 className="text-orange-600 text-2xl">Note</h3>

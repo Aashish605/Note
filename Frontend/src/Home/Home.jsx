@@ -8,7 +8,7 @@ const Home = () => {
             <div   className="h-full  "> 
                 <div className=" w-full  flex flex-col items-center  md:flex-row  bg-[#EBEBEB]      ">
                     <div className="md:w-1/2 flex flex-col mt-[10rem] mx-10 md:my-[10rem]  ">
-                        <h1 className="text-5xl">Welcome to <span className="text-[#00A7E1]" >Notefelix</span></h1>
+                        <h1 className="text-5xl">Welcome to <span className="text-[#00A7E1]" >Noteflix</span></h1>
                         <div className="my-2">An online learning platform made for students by the students. </div>
                     </div>
                     <div className="md:w-1/2 flex justify-center ">
@@ -42,7 +42,7 @@ const Home = () => {
                 <div className="w-[95vw] border-2 my-4 mx-auto border-slate-800"></div>
                 <div className="flex flex-col justify-center items-center">
                     <h1 className="text-3xl md:text-4xl my-10 ">About Us</h1>
-                    <p className="w-[70vw] mx-auto  text-center" >Greetings! We are delighted to have you visit Notefelix, a helpful educational resource for students. Our website is dedicated to providing students with the tools and resources they need to succeed in their studies. We strive to make our materials easy to understand and relevant to students, offering a range of resources such as Note, pdf files, presentations, assignments, and notices. Our goal is to support students in overcoming any challenges they may face as they pursue their education . Thank you for choosing us as your go-to source for learning and support.</p>
+                    <p className="w-[70vw] mx-auto  text-center" >Greetings! We are delighted to have you visit Noteflix, a helpful educational resource for students. Our website is dedicated to providing students with the tools and resources they need to succeed in their studies. We strive to make our materials easy to understand and relevant to students, offering a range of resources such as Note, pdf files, presentations, assignments, and notices. Our goal is to support students in overcoming any challenges they may face as they pursue their education . Thank you for choosing us as your go-to source for learning and support.</p>
                     <NavLink to='aboutus'><button className="px-4 py-6 w-fit my-8 bg-[#00A7E1] rounded-md text-white ">Learn More</button></NavLink>
                 </div>
             </div>
